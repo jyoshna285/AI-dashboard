@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Dashboard</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📋 Job Application Dashboard</h1>
+
+        <!-- Filters -->
+        <form method="POST" class="filters">
+            <!-- Status Filter -->
+            <label for="status">Filter by Status:</label>
+            <select name="status" id="status">
+                <option value="">All</option>
+                <option value="Applied">Applied</option>
+                <option value="Pending">Pending</option>
+                <option value="Rejected">Rejected</option>
+            </select>
+
+            <!-- Date Range Selector -->
+            <label for="date_range">Date Range:</label>
+            <select name="date_range" id="date_range">
+                <option value="">All Time</option>
+                <option value="this_week">This Week</option>
+                <option value="this_month">This Month</option>
+            </select>
+
+            <!-- Search Bar -->
+            <label for="search">Search Jobs:</label>
+            <input type="text" name="search" id="search" placeholder="Search by title or company" />
+
+            <button type="submit">Apply Filters</button>
+        </form>
+
+        <!-- Job Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Job Title</th>
+                    <th>Company</th>
+                    <th>Status</th>
+                    <th>Applied On</th>
+                    <th>ATS Score</th>
+                    <th>Resume Version</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr>
+                    <td>{{ job[0] }}</td>
+                    <td>{{ job[1] }}</td>
+                    <td>
+                        {% if job[2] == 'Applied' %}
+                            <span class="badge success">✅</span>
+                        {% elif job[2] == 'Pending' %}
+                            <span class="badge pending">⏳</span>
+                        {% else %}
+                            <span class="badge rejected">❌</span>
+                        {% endif %}
+                        {{ job[2] }}
+                    </td>
+                    <td>{{ job[3] }}</td>
+                    <td>{{ job[4] }}</td>
+                    <td>{{ job[5] }}</td>
+                    <td>
+                        <button class="reapply-btn">🔁 Re-apply</button>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

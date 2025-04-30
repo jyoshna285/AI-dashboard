@@ -1,0 +1,147 @@
+/* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    padding: 20px;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+/* Heading */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Styling */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.filters label {
+    font-weight: bold;
+}
+
+.filters input,
+.filters select {
+    padding: 8px 15px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: border 0.3s;
+}
+
+.filters input:focus,
+.filters select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    font-size: 1.1em;
+}
+
+table th {
+    background-color: #f4f6f9;
+    color: #555;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Badge Styling */
+.badge {
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.success {
+    background-color: #28a745;
+    color: white;
+}
+
+.pending {
+    background-color: #ffc107;
+    color: black;
+}
+
+.rejected {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Button Styling */
+.reapply-btn {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.reapply-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.reapply-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(38, 140, 255, 0.4);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filters input,
+    .filters select {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    table th, table td {
+        font-size: 1em;
+        padding: 10px;
+    }
+}
