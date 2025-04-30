@@ -1,0 +1,7 @@
+/job-tracker-dashboard
+├── static/         
+│   └── style.css       # CSS styles
+├── templates/      
+│   └── dashboard.html  # Main HTML template
+├── app.py              # Flask application
+└── database.db         # SQLite database
